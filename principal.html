@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+
+<script>
+// verifica se o browser permite armazenamento
+if (typeof(Storage) !== "undefined") {
+ 
+    localStorage.setItem("lastname", "leme");		 // verifica se o browser permite armazenamento
+ 
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname"); // recebe se o browser permite armazenamento
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+</body>
+</html>
