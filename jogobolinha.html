@@ -87,14 +87,20 @@
 					colisao = true;
 				}
 				else if((bolaPosX < jogadorPosicaoX || bolaPosX >= jogadorPosicaoX + barraLargura) && bolaPosY >= canvas.height - barraAltura){
-					pontosJogador = 0;
+					if(pontosJogador>document.getElementById("maiorPontuacao").value){
+						localStorage.setItem("maiorPontuacao", pontosJogador);
+						var testeaa = localStorage.getItem("maiorPontuacao");
+						document.getElementById("maiorPontuacao").value = testeaa;//localStorage.getItem("maiorPontuacao");
+						pontosJogador = 0;
+					}
+					//pontosJogador = 0;
 					colisao = false;
 				}
 				//document.getElementById('maiorPontuacao').value = pontosJogador;
 				if (typeof(Storage) !== "undefined") {
 					if(document.getElementById("maiorPontuacao").value == 0){
-						localStorage.setItem("maiorPontuacao", pontosJogador);
-						document.getElementById("maiorPontuacao").value = localStorage.getItem("maiorPontuacao");
+						//localStorage.setItem("maiorPontuacao", pontosJogador);
+						
 						//window.alarm("teste"+localStorage.getItem("maiorPontuacao");
 					}
 					/*if(pontosJogador>localStorage.getItem("maiorPontuacao"){
